@@ -14,7 +14,7 @@ if ENV["WEBSOLR_URL"]
   ENV["WEBSOLR_CONFIG_HOST"] ||= "www.websolr.com"
   
   @pending = true
-  Rails.logger.info "Checking index availability..."
+  # Rails.logger.info "Checking index availability..."
 
   begin
     schema_url = URI.parse("http://#{ENV["WEBSOLR_CONFIG_HOST"]}/schema/#{api_key}.json")
