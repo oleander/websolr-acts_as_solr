@@ -23,16 +23,16 @@ if ENV["WEBSOLR_URL"]
 
     case json["status"]
     when "ok"
-      Rails.logger.info "Index is available!"
+      # Rails.logger.info "Index is available!"
       @pending = false
     when "pending"
-      Rails.logger.info "Provisioning index, things may not be working for a few seconds ..."
+      # Rails.logger.info "Provisioning index, things may not be working for a few seconds ..."
       sleep 5
     when "error"
-      Rails.logger.error json["message"]
+      # Rails.logger.error json["message"]
       @pending = false
     else
-      Rails.logger.error "wtf: #{json.inspect}" 
+      # Rails.logger.error "wtf: #{json.inspect}" 
     end
   rescue Exception => e
     STDERR.puts "Error checking index status. It may or may not be available.\n" +
